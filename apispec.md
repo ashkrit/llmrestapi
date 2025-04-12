@@ -550,53 +550,8 @@ POST /prompts/{promptId}/render
 ```
 
 ### Sampling
+TBD
 
-#### Create Message
-
-```
-POST /sampling/messages
-```
-
-**Request Body**
-
-```json
-{
-  "messages": [
-    {
-      "role": "user",
-      "content": {
-        "type": "text",
-        "text": "What is the big O notation for quicksort?"
-      }
-    }
-  ],
-  "modelPreferences": {
-    "intelligencePriority": 0.8,
-    "speedPriority": 0.4
-  },
-  "systemPrompt": "You are a helpful coding assistant.",
-  "includeContext": "thisServer",
-  "temperature": 0.7,
-  "maxTokens": 1000
-}
-```
-
-**Response**
-
-```json
-{
-  "role": "assistant",
-  "content": {
-    "type": "text",
-    "text": "The average time complexity of quicksort is O(n log n)..."
-  },
-  "model": "example-model-2024",
-  "stopReason": "endTurn",
-  "_links": {
-    "self": {"href": "/sampling/messages/msg123"}
-  }
-}
-```
 
 ### Logging
 
